@@ -1,61 +1,120 @@
 <!--<h2>Map</h2>-->
 <div class="row">
   <div class="col-md-12">
-      <div id="map"></div>
+    <div id="map"></div>
   </div>
 </div>
-<div class="row">
-  <div class="col-md-2">
-    <div class ="logoSlogo">
-     <img src="/img/logo.png" id = "logo" alt="hunkerup" height="33" width="50">
-     <!--<p class="slogan" >Keeping you Safe and Dry!</p>-->
-     </div>
-     <div class="addForm">
-     <h3 id="add">Report an incident</h3>
 
-      <script>
-        var markers = <%- JSON.stringify(places) %>;
-      </script>
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#home">Report an Incident</a></li>
+  <li><a data-toggle="tab" href="#menu1">Get Supplies</a></li>
+  <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+  <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
+</ul>
 
-      <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsOviKubGOIxhM8kkaClBBQtXg-Pk4wEM&callback=initMap">
+<div class="tab-content">
+  <div id="home" class="tab-pane fade in active">
 
-      </script>
-
-      <form action="/places" method="POST">
-
-        <div class="form-group">
-          <input type="text" class="form-control" name="name" placeholder="Name">
+    <div class="row">
+      <div class="col-md-2">
+        <div class="logoSlogo">
+          <img src="/img/logo.png" id="logo" alt="hunkerup" height="33" width="50">
+          <!--<p class="slogan" >Keeping you Safe and Dry!</p>-->
         </div>
-        <div class="form-group">
-          <input type="text" class="form-control" name="address" placeholder="Address">
+        <div class="addForm">
+          <h3 id="add">Report an incident</h3>
 
+          <script>
+            var markers = <%- JSON.stringify(places) %>;
+          </script>
+
+          <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsOviKubGOIxhM8kkaClBBQtXg-Pk4wEM&callback=initMap">
+
+          </script>
+
+          <form action="/places" method="POST">
+
+            <div class="form-group">
+              <input type="text" class="form-control" name="name" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="address" placeholder="Address">
+
+            </div>
+
+            <input type="submit" class="btn btn-primary">
+          </form>
         </div>
-    
-          <input type="submit" class="btn btn-primary">
-      </form>
+
       </div>
-
-  </div>
-  <div class="col-md-4">
-    <div class="places">
-        <h3 id="places">Incidents Reported</h3>
-      <% places.forEach(function(place) { %>
-        <div class="well">
-          <%= place.name %>
+      <div class="col-md-4">
+        <div class="places">
+          <h3 id="places">Incidents Reported</h3>
+          <% places.forEach(function(place) { %>
+            <div class="well">
+              <%= place.name %>
+            </div>
+            <% }); %>
         </div>
-        <% }); %>
+      </div>
+      <div class="col-md-3"></div>
+      <div class="col-md-3"></div>
+      <!-- scripts -->
+
+      <script src="/js/script.js"></script>
+
     </div>
-    
-    
-  </div>
-  <div class="col-md-3">
-   
-  </div>
-  <div class="col-md-3"></div>
 
+
+  </div>
+  <div id="menu1" class="tab-pane fade">
+
+
+    <div class="row">
+      <div class="col-md-2">
+        <div class="logoSlogo">
+          <img src="/img/logo.png" id="logo" alt="hunkerup" height="33" width="50">
+          <!--<p class="slogan" >Keeping you Safe and Dry!</p>-->
+        </div>
+        <div class="addForm">
+          <h3 id="add">Get Supplies</h3>
+        </div>
+      </div>
+      <div class="col-md-4"></div>
+      <div class="col-md-6"></div>
+
+    </div>
+  </div>
+  <div id="menu2" class="tab-pane fade">
+    <div class="row">
+      <div class="col-md-2">
+        <div class="logoSlogo">
+          <img src="/img/logo.png" id="logo" alt="hunkerup" height="33" width="50">
+          <!--<p class="slogan" >Keeping you Safe and Dry!</p>-->
+        </div>
+        <div class="addForm">
+          <h3 id="add">Get Supplies</h3>
+        </div>
+      </div>
+      <div class="col-md-4"></div>
+      <div class="col-md-6"></div>
+
+    </div>
+  </div>
+  <div id="menu3" class="tab-pane fade">
+    <div class="row">
+      <div class="col-md-2">
+        <div class="logoSlogo">
+          <img src="/img/logo.png" id="logo" alt="hunkerup" height="33" width="50">
+          <!--<p class="slogan" >Keeping you Safe and Dry!</p>-->
+        </div>
+        <div class="addForm">
+          <h3 id="add">Get Supplies</h3>
+        </div>
+      </div>
+      <div class="col-md-4"></div>
+      <div class="col-md-6"></div>
+
+    </div>
+  </div>
 </div>
-
-<!-- scripts -->
-<script src="/js/script.js"></script>
-
-
