@@ -103,3 +103,14 @@ div.well{
   box-shadow: inset 0 0px 0px rgba(0,0,0,0);
   display:inline-block;
 }
+
+div#map2.map{
+  height:100%;
+}
+div.tab-content{
+  height:100%;
+}
+
+div#menu2.tab-pane.fade.active.in, div.row.surge, div.col-md-12.surge {
+  height:100%;
+}

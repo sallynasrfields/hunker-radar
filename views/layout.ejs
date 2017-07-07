@@ -16,6 +16,38 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <!-- Argis headings -->
+     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+       <link rel="stylesheet" href="https://js.arcgis.com/3.20/esri/css/esri.css">
+    <style>
+       #map2 {
+        height: 100%; width: 100%; margin: 0; padding: 0;
+      }
+    </style>
+
+    <script src="https://js.arcgis.com/3.20/"></script>
+    <script>
+      var map;
+
+      require(["esri/map", 
+        "esri/layers/ArcGISTiledMapServiceLayer", 
+        "esri/geometry/Point",
+        "esri/SpatialReference",
+        "dojo/domReady!",
+        ],
+        function(Map, ArcGISTiledMapServiceLayer, Point, SpatialReference) {
+          var map = new Map("map2", {
+      basemap: "hybrid",
+      center: [-95.366302,29.761993],
+      zoom: 10
+    });
+            // Category 5 Storm Surge
+          var tiled = new ArcGISTiledMapServiceLayer("http://tiles.arcgis.com/tiles/C8EMgrsFcRFL6LrL/arcgis/rest/services/NHC_NationalMOM_Category5_CONUS/MapServer");
+          map.addLayer(tiled);
+        }
+      );
+    </script>
   </head>
   <body>
     <div class="container">
