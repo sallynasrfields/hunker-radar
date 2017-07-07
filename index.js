@@ -29,6 +29,13 @@ app.post('/places', function(req, res) {
   });
 });
 
-var server = app.listen(process.env.PORT || 3000);
+var PORT = app.listen(process.env.PORT || 3000);
 
-module.exports = server;
+// Syncing our sequelize models and then starting our express app
+db.sequelize.sync({ force: true }).then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
+});
+
+module.exports = PORT;
