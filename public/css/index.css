@@ -1,0 +1,75 @@
+div#home, div.main-body{
+    height:100%;
+}
+.btn {
+    font-size: 1em;
+    color: white;
+}
+
+header {
+    font-family: "Book Antiqua";
+    font-size: 2rem;
+    color: black;
+}
+
+.main-body {
+    background: url('../images/rain2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    opacity: .7;
+    color: whitesmoke;
+    height: 55rem;
+}
+
+
+.modal-header {
+    /*background-color: rgba(18, 83, 102, 1);*/
+    background-color: rgba(15, 153, 193, 1);
+    border-bottom-width: 0px;
+    padding-left: 40%;
+}
+
+.modal-footer {
+    /*background-color:rgba(18, 83, 102, 1);*/
+    background-color: rgba(15, 153, 193, 1);
+    border-top-width: 0px;
+}
+
+.modal-body {
+    background: rgba(15, 153, 193, 1);
+    padding-left: 5%;
+}
+
+.modal-backdrop {
+    opacity: .4 !important;
+}
+
+#username {
+    border-radius: 5px;
+    border-color: rgba(18, 83, 102, 1);
+    border-width: 1px;
+    /*font-weight: bold;*/
+}
+
+#password {
+    border-radius: 5px;
+    border-color: rgba(18, 83, 102, 1);
+    border-width: 1px;
+    /*font-weight: bold;*/
+}
+
+#myModal {
+    border-color: black;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 5px;
+}
+
+.modal-title {
+    color: white;
+    font-family: "Book Antiqua";
+    font-weight: bold;
+}
+
+.main-content {
+    background: rgba(15, 153, 193, .7);
+}

@@ -21,12 +21,15 @@ div.container{
 
 div.row{
   margin:0px;
+  width:100%;
 }
 
 div.col-md-12, div.col-md-2,div.col-md-3,div.col-md-4{
   margin:0px;
   padding:0;
-  border:0;
+  /*border-width:1px;
+  border-color:orange;
+  border-style:solid;*/
 }
 
 div.col-md-4{
@@ -35,7 +38,8 @@ div.col-md-4{
 
 div#map{ 
   height:450px;
-  width:1500px;
+  width:1700px;
+
 }
 
 div.logoSlogo{
@@ -45,7 +49,7 @@ div.logoSlogo{
   padding:0;
   border:0;
 }
-img#logo{
+img#smallLogo{
    margin-bottom:0px;
   display:block;
   top:20;
@@ -84,7 +88,7 @@ input.btn.btn-primary{
 }
 
 div.places{
- margin-top:66px;
+ margin-top:84px;
  margin-left:90px;
  height:200px;
 }
@@ -113,4 +117,28 @@ div.tab-content{
 
 div#menu2.tab-pane.fade.active.in, div.row.surge, div.col-md-12.surge {
   height:100%;
+}
+
+div.col-md-4.logo{
+  height:400px;
+}
+
+img#logo{
+  display:block;
+  margin: 30px auto;
+
+}
+
+button.btn.btn-primary, button.btn.btn-info{
+  background-color:#474646;
+  color:#9dbcce;
+  /*color:
+#d2b24d;*/
+  border-width:0px;
+  margin:30px;
+  height:45px;
+  width:140px;
+  font-size: 30px;
+  padding:0;
+
 }
