@@ -7,7 +7,7 @@ var initMap = function() {
     zoom: 10
   });
   
-    $("#map").css("width", 1500).css("height", 450);
+
   //Set up Elevation
 var elevator = new google.maps.ElevationService;
 var infowindow = new google.maps.InfoWindow({map: map});

@@ -102,10 +102,12 @@
         </div>
         <div class="addForm">
           <h3 id="add">Report an incident</h3>
-
+         
           <script>
             var markers = <%- JSON.stringify(places) %>;
           </script>
+           <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsOviKubGOIxhM8kkaClBBQtXg-Pk4wEM&callback=initMap"></script>
+          
 
           
           <form action="/places" method="POST">
@@ -119,9 +121,10 @@
             </div>
 
             <input type="submit" class="btn btn-primary">
-            <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsOviKubGOIxhM8kkaClBBQtXg-Pk4wEM&callback=initMap"></script>
+           
 
           </form>
+           
         </div>
 
       </div>
@@ -142,11 +145,7 @@
       <script src="/js/script.js"></script>
 
     </div>
-    <script>
-      $('a[href="#menu1"]').on('shown.bs.tab', function (e) {
-        initMap();
-      });
-    </script>
+  
 
   </div>
   <!--This is the Storm Surge Tab-->
