@@ -1,6 +1,4 @@
-jQuery('a[href="#menu1"]').on('click',function(){
-   jQuery(window).trigger('resize');
-});
+
 
 var initMap = function() {
 

@@ -84,25 +84,7 @@
            
     </div>
 
-    <!--Tether Javascript for Bootstrap-->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js'></script>
-    <!--Include jQuery-->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-    <!--Bootstrap Javascript-->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
-    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyA1RgNhz0hWSKo92_yUWQfxJf38weKGw_0",
-            authDomain: "find-safety.firebaseapp.com",
-            databaseURL: "https://find-safety.firebaseio.com",
-            projectId: "find-safety",
-            storageBucket: "find-safety.appspot.com",
-            messagingSenderId: "562844561374"
-        };
-        firebase.initializeApp(config);
-    </script>
+   
   </div>
   <!--This is the Google Maps Tab-->
   <div id="menu1" class="tab-pane fade">
@@ -125,10 +107,7 @@
             var markers = <%- JSON.stringify(places) %>;
           </script>
 
-          <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsOviKubGOIxhM8kkaClBBQtXg-Pk4wEM&callback=initMap">
-
-          </script>
-
+          
           <form action="/places" method="POST">
 
             <div class="form-group">
@@ -140,6 +119,8 @@
             </div>
 
             <input type="submit" class="btn btn-primary">
+            <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsOviKubGOIxhM8kkaClBBQtXg-Pk4wEM&callback=initMap"></script>
+
           </form>
         </div>
 
@@ -162,10 +143,9 @@
 
     </div>
     <script>
-      $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+      $('a[href="#menu1"]').on('shown.bs.tab', function (e) {
         initMap();
       });
-
     </script>
 
   </div>
