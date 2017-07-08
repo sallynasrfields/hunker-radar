@@ -1,61 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Geocoding</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/style.css">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Geocoding</title>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+  <script async defer src="https://maps.googleapis.com/maps/api/js"></script>
+
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <!-- Argis headings -->
-     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-       <link rel="stylesheet" href="https://js.arcgis.com/3.20/esri/css/esri.css">
-    <style>
-       #map2 {
-        height: 100%; width: 100%; margin: 0; padding: 0;
+  <!-- Argis headings -->
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="https://js.arcgis.com/3.20/esri/css/esri.css">
+  <style>
+    #map2 {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+
+  <script src="https://js.arcgis.com/3.20/"></script>
+  <script>
+    var map;
+
+    require(["esri/map",
+      "esri/layers/ArcGISTiledMapServiceLayer",
+      "esri/geometry/Point",
+      "esri/SpatialReference",
+      "dojo/domReady!",
+    ],
+      function (Map, ArcGISTiledMapServiceLayer, Point, SpatialReference) {
+        var map = new Map("map2", {
+          basemap: "hybrid",
+          center: [-95.366302, 29.761993],
+          zoom: 10
+        });
+        // Category 5 Storm Surge
+        var tiled = new ArcGISTiledMapServiceLayer("http://tiles.arcgis.com/tiles/C8EMgrsFcRFL6LrL/arcgis/rest/services/NHC_NationalMOM_Category5_CONUS/MapServer");
+        map.addLayer(tiled);
       }
-    </style>
+    );
+  </script>
+</head>
 
-    <script src="https://js.arcgis.com/3.20/"></script>
-    <script>
-      var map;
+<body>
+  <div class="container">
+    <%- body %>
+  </div>
+  <!-- jQuery -->
+  <script src="//code.jquery.com/jquery.js"></script>
+  <!-- Bootstrap JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+    crossorigin="anonymous"></script>
+ 
+</body>
 
-      require(["esri/map", 
-        "esri/layers/ArcGISTiledMapServiceLayer", 
-        "esri/geometry/Point",
-        "esri/SpatialReference",
-        "dojo/domReady!",
-        ],
-        function(Map, ArcGISTiledMapServiceLayer, Point, SpatialReference) {
-          var map = new Map("map2", {
-      basemap: "hybrid",
-      center: [-95.366302,29.761993],
-      zoom: 10
-    });
-            // Category 5 Storm Surge
-          var tiled = new ArcGISTiledMapServiceLayer("http://tiles.arcgis.com/tiles/C8EMgrsFcRFL6LrL/arcgis/rest/services/NHC_NationalMOM_Category5_CONUS/MapServer");
-          map.addLayer(tiled);
-        }
-      );
-    </script>
-  </head>
-  <body>
-    <div class="container">
-      <%- body %>
-    </div>
-    <!-- jQuery -->
-    <script src="//code.jquery.com/jquery.js"></script>
-    <!-- Bootstrap JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  </body>
 </html>

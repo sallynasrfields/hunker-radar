@@ -1,13 +1,15 @@
 <ul class="nav nav-tabs">
-  <li class="active"><a data-toggle="tab" href="#home">Google Radar</a></li>
-  <li><a data-toggle="tab" href="#menu1">Supplies</a></li>
+  <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+  <li><a data-toggle="tab" href="#menu1" id = "radar">Google Radar</a></li>
   <li><a data-toggle="tab" href="#menu2">Storm Surge</a></li>
 </ul>
 
 <div class="tab-content">
-  <div id="home" class="tab-pane fade in active">
+ <div id="home" class="tab-pane fade in active"></div>
+  <div id="menu1" class="tab-pane fade">
     <div class="row">
       <div class="col-md-12">
+  
         <div id="map"></div>
       </div>
     </div>
@@ -60,9 +62,14 @@
       <script src="/js/script.js"></script>
 
     </div>
+<script>
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+   initMap();
+});
+</script>
 
   </div>
-  <div id="menu1" class="tab-pane fade"></div>
+ 
   <div id="menu2" class="tab-pane fade">
     <div class="row surge">
       <div class="col-md-12 surge">

@@ -1,9 +1,15 @@
+jQuery('a[href="#menu1"]').on('click',function(){
+   jQuery(window).trigger('resize');
+});
+
 var initMap = function() {
 
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 29.7604, lng: -95.3698},
     zoom: 10
   });
+  
+    $("#map").css("width", 1500).css("height", 450);
   //Set up Elevation
 var elevator = new google.maps.ElevationService;
 var infowindow = new google.maps.InfoWindow({map: map});
@@ -59,17 +65,8 @@ function displayLocationElevation(location, elevator, infowindow) {
       infoWindow.open(map, googleMarker);
     });
 
-    //  var map;
 
-//   function initialize() {
-//     var mapOptions = {
-//       zoom: 5,
-//       center: new google.maps.LatLng(42.5, -95.5),
-//       mapTypeId: google.maps.MapTypeId.ROADMAP
-//     };
-//     map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
 
-    //Load Radar Images and add them to imageArray
     tileNEX = new google.maps.ImageMapType({
         getTileUrl: function(tile, zoom) {
             return "http://mesonet.agron.iastate.edu/cache/tile.py/1.0.0/nexrad-n0q-900913/" + zoom + "/" + tile.x + "/" + tile.y +".png?"+ (new Date()).getTime(); 
@@ -172,3 +169,7 @@ function displayLocationElevation(location, elevator, infowindow) {
 
   });
 };
+
+        
+
+
