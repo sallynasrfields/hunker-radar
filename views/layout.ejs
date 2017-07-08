@@ -46,15 +46,22 @@
     <%- body %>
   </div>
   
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  
+   
+    <script>
+      $('a[href="#menu1"]').on('shown.bs.tab', function (e) {
+        initMap();
+      });
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
    <!-- jQuery -->
   <script src="//code.jquery.com/jquery.js"></script>
   <!-- Bootstrap JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
     crossorigin="anonymous"></script>
     <!--Google-->
-      <script async defer src="https://maps.googleapis.com/maps/api/js"></script>
-    <script src="https://js.arcgis.com/3.20/"></script>
+      <script  defer src="https://maps.googleapis.com/maps/api/js"></script>
+       <script src="https://js.arcgis.com/3.20/"></script>
   <script>
     var map;
 
@@ -77,11 +84,6 @@
     );
   </script>
 
-    <script>
-      $('a[href="#menu1"]').on('shown.bs.tab', function (e) {
-        initMap();
-      });
-    </script>
  
  
 </body>
