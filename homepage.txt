@@ -1,0 +1,79 @@
+ <div id="home" class="tab-pane fade in active">
+   <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h5 class="modal-title" id="exampleModalLabel" style="color: black; text-shadow: 1px 1px 3px white">User Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                         </button>
+                </div>
+                <div class="modal-body">
+                    <form class="text-center">
+                        <span style="color: black; font-weight: bold; font-family: 'Book Antiqua'; text-shadow: 1px 1px 3px white;">Username: </span>
+                        <input id="username" type="text" class="" placeholder=" Username"><br><br>
+                        <span style="color:black; font-weight: bold; font-family: 'Book Antiqua'; text-shadow: 1px 1px 3px white;">Password: </span>
+                        <input type="text" id="password" class="" placeholder=" Password">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary bg-inverse" data-dismiss="modal">Close</button>
+                    <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="guestModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel" style="color: black; text-shadow: 1px 1px 3px white"> User Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+                </div>
+                <div class="modal-body text-center" style="font-weight: bold;font-family: 'Book Antiqua';">
+                    Continue as Guest?
+                </div>
+                <div class="modal-footer">
+                    <a href="./safety.html"><button type="button" class="btn btn-success">Confirm</button></a>
+                    <button type="button" class="btn btn-secondary bg-inverse" data-dismiss="modal">Cancel</button>
+                    <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Header Row for Bootstrap-->
+    <div class="main-body">
+      <div class="row">
+       
+        <div class="col-md-12 logo">
+            <img src="/images/logo.png" id="logo" alt="hunkerup" height="300" width="400">
+        </div>
+        
+      </div>
+        <div class="row">
+       
+        <div class="col-md-12">
+       <!--Main Content Row for Bootstrap-->
+       
+        <div class="authentication-buttons text-center btn-group-lg">
+            <br><br>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                    Login
+            </button>
+            <button class="btn btn-info" type="button" data-toggle="modal" data-target="#guestModal">Guest</button>
+        </div>
+        </div>
+     
+      </div>
+           
+    </div>
+
+   
+  </div>

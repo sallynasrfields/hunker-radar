@@ -1,9 +1,48 @@
-#Express Geocoding and Maps
+ # Project Hunker up
 
-##Setup
+An application designed to get you to a safe elevated space during high flooding
 
-* Fork and clone this repository
-* Run `npm install` to install packages
-* Create a database for this app (you can use `createdb geocode_example`)
-* Run sequelize migrations (`sequelize db:migrate`)
-* Run the app using `nodemon`
+ # Getting Started
+
+ clone repository to your client
+
+### Installation for pre-requisites
+
+run command "npm install" from your terminal
+run command "npm install --n save sequelize sequelize-cli sqlite3" in your terminal
+run command "node_modules/.bin/sequelize db:migrate" in your terminal
+
+## Running the tests
+
+run command "node index.js"
+open window in browser and run command "localhost:3000" on your machine and press enter
+
+### Break down into end to end tests
+
+
+## Deployment
+
+deployed to Heroku
+
+
+## Built With
+Heroku
+Airtable
+Googlemaps
+Bootstrap3
+bootstrap4
+font awesome
+google fonts
+bitbucket
+google sheets
+
+#future plans to incorporate
+
+
+
+
+## Team 
+Taylor 
+Sally
+Frankie
+Omar
